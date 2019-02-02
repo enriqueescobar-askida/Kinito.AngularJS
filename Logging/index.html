@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+            Example - example-guide-concepts-1-production
+        </title>
+        <meta charset="UTF-8">
+        <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,40' rel='stylesheet' type='text/css'>
+        <link href="css/main.css" rel="stylesheet" />
+        <!-- Include the core AngularJS library -->
+        <script src="Scripts/angular.min.js"></script>
+        <!-- Include the AngularJS routing library -->
+        <script src="Scripts/angular-route.min.js"></script>
+    </head>
+    <body ng-app="LoggingApp">
+        <div class="header" ng-controller="headerController">
+            {{head_title}}
+            <div class="container">
+                {{head_subtitle}}
+                    <ul>
+                        {{section}}
+                        <li ng-repeat="invoice in invoices">
+                            {{invoice}}
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <div class="main" ng-controller="MainController">
+            {{main_title}}
+            <div class="container">
+                {{main_subtitle}}
+            </div>
+        </div>
+        <div class="footer" ng-controller="footerController">
+            {{footer_title}}
+            <div class="container">
+                {{footer_subtitle}}
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>
+                            {{bolts_name}}
+                        </h3>
+                        <ul>
+                            <li ng-repeat="bolt in bolts">
+                                {{bolt.name}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>
+                            {{more_bolts_name}}
+                        </h3>
+                        <ul>
+                            <li ng-repeat="more_bolt in more_bolts">
+                                {{more_bolt.name}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h3>
+                            {{extras_name}}
+                        </h3>
+                        <ul>
+                            <li ng-repeat="extra in extras">
+                                <a href="http://{{extra.link}}" title="{{extra.description}}" target="_blank">
+                                    {{extra.name}}
+                                </a>
+                                <br/>
+                                <a href="{{extra.share}}http://{{extra.link}}" title="{{extra.description}} shared" target="_blank">
+                                    {{extra.name}} share
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modules -->
+        <script src="js/app.js"></script>
+        <!-- Controllers -->
+        <script src="js/controllers/MainController.js"></script>
+        <script src="js/controllers/headerController.js"></script>
+        <script src="js/controllers/footerController.js"></script>
+        <script src="js/controllers/invoiceController.js"></script>
+        <script src="js/controllers/invoiceAController.js"></script>
+        <script src="js/controllers/invoiceBController.js"></script>
+        <script src="js/controllers/invoiceCController.js"></script>
+        <!-- Services -->
+    </body>
+</html>

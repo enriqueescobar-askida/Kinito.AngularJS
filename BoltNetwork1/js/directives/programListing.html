@@ -1,0 +1,50 @@
+﻿<div class="row" ng-controller="MainController">
+  <div class="col-md-3" class="series_img">
+    <img class="img-responsive" ng-src="{{ program.series_img }}">
+  </div>            
+  <div class="col-md-6">
+      <h1 class="series">
+          {{ program.series }}
+      </h1>
+      <h2 class="episode">
+          {{ program.episode}}
+      </h2>
+      <p class="description">
+          {{ program.description }}
+      </p>
+  </div>
+  <div class="col-md-3">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span>
+                Date:
+            </span>
+            {{ program.datetime | date:'longDate' }}
+        </li>
+        <li class="list-group-item">
+            <span>
+                On air:
+            </span>
+            {{ program.datetime | date:'fullDate'}}
+        </li>
+        <li class="list-group-item">
+            <span>
+                Time:
+            </span>
+            {{ program.datetime | date:'mediumTime' }}
+        </li>
+        <li class="list-group-item">
+            <span>
+                Season:
+            </span>
+            {{ program.season }}
+        </li>
+        <li class="list-group-item">
+            <span>
+                Genre:
+            </span>
+            {{ program.genre }}
+        </li>
+    </ul>
+  </div>
+</div>

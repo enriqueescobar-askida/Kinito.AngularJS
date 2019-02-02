@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="Scripts/angular.min.js"></script>
+  </head>
+  <body ng-app="MoveLogApp">
+    <div class="header" ng-controller="headerController">
+      <div class="container">
+        {{move_log_title}}
+      </div>
+    </div>
+    <div class="main">
+      <div class="container" ng-controller="MainController">
+        <div class="row" ng-repeat="exercise in exercises">
+            <div class="exercise-icon col-xs-2">
+                <img class="img-responsive" ng-src="{{exercise.icon}}"/>
+            </div>
+            <div class="col-xs-6">
+                <p class="exercise-name">
+                    {{exercise.name}}
+                </p>
+            </div>
+            <div class="col-xs-4 counters">
+                <span class="decrease" ng-click="decrease($index)">-</span>
+                <span class="count">{{exercise.count|number}}</span>
+                <span class="increase" ng-click="increase($index)">+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer" ng-controller="footerController">
+      <<div class="container">
+        {{footer_title}}
+      </div>
+    </div>
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/headerController.js"></script>
+    <script src="js/controllers/footerController.js"></script>
+  </body>
+</html>

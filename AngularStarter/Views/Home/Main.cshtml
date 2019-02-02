@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="hero-unit">
+    <h1>
+        Welcome - AngularStarter
+    </h1>
+    <p>
+        This is a ASP.Net MVC template for integrating MVC with AngularJS framework. The stack includes ASP.Net MVC, WebAPI, Bootstrap 2.3.2 and AngularJS 1.2.14.
+    </p>
+</div>
+<div class="row" ng-controller="MainController">
+    <div class="span4" ng-repeat="topic in topics">
+        <h3>
+            {{topic.title}}
+        </h3>
+        <p>
+            {{topic.description}}
+        </p>
+        <p>
+            <a class="btn" href='{{topic.link}}'>
+                {{topic.follow}}
+            </a>
+        </p>
+    </div>
+</div>
